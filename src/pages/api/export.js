@@ -1,7 +1,7 @@
 import * as XLSX from 'xlsx';
-import { getRatings } from '../lib/storage';
-import { generateDataset } from '../lib/celebrities';
-import { getUserFromRequest } from '../lib/auth';
+import { getRatings } from '../../lib/storage';
+import { generateDataset } from '../../lib/celebrities';
+import { getUserFromRequest } from '../../lib/auth';
 
 export default function handler(req, res) {
   const user = getUserFromRequest(req);
