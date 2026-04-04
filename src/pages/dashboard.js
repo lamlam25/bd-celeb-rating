@@ -76,8 +76,23 @@ export default function Dashboard() {
     }
   };
 
-  const exportExcel = (type) => {
-    window.location.href = `/api/export?type=${type}&t=${token}`;
+  const exportExcel = async (type) => {
+    const res = await fetch(`/api/export?type=${type}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (res.ok) {
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${type}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    } else {
+      alert('Export failed. Please try again.');
+    }
   };
 
   const logout = () => {
@@ -139,11 +154,14 @@ export default function Dashboard() {
               ))}
             </div>
             <div style={s.exportBtns}>
+              <button onClick={() => router.push('/admin')} style={s.adminBtn}>
+                ⚙️ Admin Panel
+              </button>
               <button onClick={() => exportExcel('dataset')} style={s.exportBtn}>
-                ↓ Dataset Excel
+                ↓ Dataset CSV
               </button>
               <button onClick={() => exportExcel('ratings')} style={s.exportBtn}>
-                ↓ Ratings Excel
+                ↓ Ratings CSV
               </button>
             </div>
           </div>
@@ -420,6 +438,16 @@ const s = {
     color: '#e8b84b',
   },
   exportBtns: { display: 'flex', gap: '10px' },
+  adminBtn: {
+    padding: '8px 18px',
+    background: 'rgba(232,184,75,0.12)',
+    border: '1px solid rgba(232,184,75,0.3)',
+    borderRadius: '8px',
+    color: '#e8b84b',
+    fontSize: '13px',
+    cursor: 'pointer',
+    fontWeight: 500,
+  },
   exportBtn: {
     padding: '8px 18px',
     background: 'rgba(75,189,127,0.12)',

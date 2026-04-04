@@ -1,25 +1,51 @@
-import * as XLSX from 'xlsx';
 import { getRatings } from '../../lib/storage';
 import { generateDataset } from '../../lib/celebrities';
 import { getUserFromRequest } from '../../lib/auth';
 
-export default function handler(req, res) {
+// Helper function to convert JSON to CSV
+function jsonToCSV(data) {
+  if (data.length === 0) return '';
+  
+  const headers = Object.keys(data[0]);
+  const csvRows = [];
+  
+  // Add header row
+  csvRows.push(headers.join(','));
+  
+  // Add data rows
+  for (const row of data) {
+    const values = headers.map(header => {
+      const value = row[header];
+      // Escape commas and quotes in values
+      const escaped = ('' + value).replace(/"/g, '""');
+      return `"${escaped}"`;
+    });
+    csvRows.push(values.join(','));
+  }
+  
+  return csvRows.join('\n');
+}
+
+export default async function handler(req, res) {
   const user = getUserFromRequest(req);
   if (!user) return res.status(401).json({ error: 'Unauthorized' });
+  
   const type = req.query.type;
-  const wb = XLSX.utils.book_new();
+  let csvData = '';
+  let filename = '';
 
   if (type === 'dataset') {
-    const ws = XLSX.utils.json_to_sheet(generateDataset());
-    XLSX.utils.book_append_sheet(wb, ws, 'Dataset');
+    const dataset = generateDataset();
+    csvData = jsonToCSV(dataset);
+    filename = 'dataset.csv';
   } else {
-    const ratings = getRatings();
-    const ws = XLSX.utils.json_to_sheet(ratings);
-    XLSX.utils.book_append_sheet(wb, ws, 'Ratings');
+    const ratings = await getRatings();
+    csvData = jsonToCSV(ratings);
+    filename = 'ratings.csv';
   }
 
-  const buffer = XLSX.write(wb, { type: 'buffer', bookType: 'xlsx' });
-  res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-  res.setHeader('Content-Disposition', `attachment; filename="${type}.xlsx"`);
-  res.send(buffer);
+  res.setHeader('Content-Type', 'text/csv');
+  res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+  res.send(csvData);
 }
+
