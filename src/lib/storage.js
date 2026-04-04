@@ -26,6 +26,18 @@ export async function findUserByEmail(email) {
     console.error('Error finding user:', error);
     return null;
   }
+  
+  // Convert database format to app format
+  if (data) {
+    return {
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      password: data.password_hash,
+      createdAt: data.created_at
+    };
+  }
+  
   return data;
 }
 
