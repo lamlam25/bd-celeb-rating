@@ -1,9 +1,17 @@
 import { supabase } from '../../../lib/supabase';
 import { getUserFromRequest } from '../../../lib/auth';
 
+// Admin email - only this user can access admin panel
+const ADMIN_EMAIL = 'lamialabib.sarker@gmail.com';
+
 export default async function handler(req, res) {
   const user = getUserFromRequest(req);
   if (!user) return res.status(401).json({ error: 'Unauthorized' });
+
+  // Check if user is admin
+  if (user.email !== ADMIN_EMAIL) {
+    return res.status(403).json({ error: 'Access denied. Admin only.' });
+  }
 
   // Get all users
   const { data: users, error: usersError } = await supabase

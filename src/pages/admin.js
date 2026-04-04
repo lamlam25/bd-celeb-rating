@@ -2,12 +2,16 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
+// Admin email - only this user can access admin panel
+const ADMIN_EMAIL = 'lamialabib.sarker@gmail.com';
+
 export default function AdminPanel() {
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [token, setToken] = useState('');
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const t = localStorage.getItem('token');
@@ -16,8 +20,18 @@ export default function AdminPanel() {
       router.push('/');
       return;
     }
+    
+    const userData = JSON.parse(u);
+    
+    // Check if user is admin
+    if (userData.email !== ADMIN_EMAIL) {
+      setError('Access Denied: Admin only');
+      setLoading(false);
+      return;
+    }
+    
     setToken(t);
-    setUser(JSON.parse(u));
+    setUser(userData);
     fetchStats(t);
   }, []);
 
@@ -26,10 +40,18 @@ export default function AdminPanel() {
       const res = await fetch('/api/admin/stats', {
         headers: { Authorization: `Bearer ${t}` },
       });
+      
+      if (res.status === 403) {
+        setError('Access Denied: Admin only');
+        setLoading(false);
+        return;
+      }
+      
       const data = await res.json();
       setStats(data);
     } catch (err) {
       console.error('Failed to fetch stats:', err);
+      setError('Failed to load admin panel');
     } finally {
       setLoading(false);
     }
@@ -46,15 +68,36 @@ export default function AdminPanel() {
 
   if (loading) {
     return (
-      <div style={{ ...s.page, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ ...s.page, display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
         <p style={{ color: '#7a7888' }}>Loading admin panel...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div style={{ ...s.page, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', gap: '20px' }}>
+        <h1 style={{ fontSize: '48px', color: '#e07070' }}>🚫</h1>
+        <h2 style={{ color: '#e07070', fontSize: '24px' }}>{error}</h2>
+        <p style={{ color: '#7a7888' }}>You do not have permission to access this page.</p>
+        <button onClick={() => router.push('/dashboard')} style={{ 
+          padding: '10px 20px',
+          background: '#4bbd7f',
+          border: 'none',
+          borderRadius: '8px',
+          color: 'white',
+          cursor: 'pointer',
+          fontSize: '14px'
+        }}>
+          Go to Dashboard
+        </button>
       </div>
     );
   }
 
   if (!stats) {
     return (
-      <div style={{ ...s.page, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ ...s.page, display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
         <p style={{ color: '#e07070' }}>Failed to load stats</p>
       </div>
     );

@@ -269,6 +269,12 @@ For password — you need to use a **Personal Access Token** instead:
    - Name: `JWT_SECRET`
    - Value: `some-long-random-secret-string-type-anything-here-make-it-long`
    - Click **Add**
+   - Name: `NEXT_PUBLIC_SUPABASE_URL`
+   - Value: Your Supabase project URL (e.g., `https://xxxxx.supabase.co`)
+   - Click **Add**
+   - Name: `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - Value: Your Supabase anon key (get from Supabase Settings → API)
+   - Click **Add**
 8. Click **Deploy**
 9. Wait 2–3 minutes...
 10. 🎉 Your site is LIVE! You'll get a URL like: `https://bd-celeb-rating.vercel.app`
@@ -278,30 +284,34 @@ For password — you need to use a **Personal Access Token** instead:
 ## PART 6 — IMPORTANT NOTES
 
 ### About Data Storage
-The project stores users and ratings in JSON files in a `data/` folder.
-- On your local PC: works perfectly
-- On Vercel free tier: data resets when the server restarts (every few hours)
+The project uses **Supabase (PostgreSQL database)** for persistent data storage.
+- User accounts and ratings are stored in the cloud database
+- Data persists across deployments and server restarts
+- No data loss on Vercel deployments
 
-**To keep data permanently on Vercel, you have two options:**
+### Supabase Configuration
+The project requires the following environment variables to connect to Supabase:
+- `NEXT_PUBLIC_SUPABASE_URL` - Your Supabase project URL
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Your Supabase anonymous/public key
+- `JWT_SECRET` - Secret key for JWT token generation
 
-**Option A (Easy & Free) — Use a free database:**
-1. Go to: **https://supabase.com** → Sign up for free
-2. Create a new project
-3. Use the Supabase documentation to connect — or ask me to update the code!
+**For local development:** These are set in `.env.local` file
+**For Vercel deployment:** Set these in Vercel Project Settings → Environment Variables
 
-**Option B — Keep it simple for your project submission:**
-If this is just for a university project/submission, run it locally with
-`npm run dev` and use the Excel export buttons to download your data.
-The local version works perfectly and data stays saved.
+### Admin Panel Access
+- Admin panel is located at `/admin` route
+- Only the designated admin email can access full admin features
+- Shows user statistics, celebrity average ratings, and analytics
+- Regular users will see "Access Denied" if they try to access admin panel
 
 ---
 
-### How to Export Excel Files
+### How to Export CSV Files
 Once logged in on the dashboard:
-- Click **"↓ Dataset Excel"** → downloads the 100-image dataset
-- Click **"↓ Ratings Excel"** → downloads all ratings + summary sheet
+- Click **"↓ Dataset CSV"** → downloads the 100-image dataset as CSV
+- Click **"↓ Ratings CSV"** → downloads all ratings + user data as CSV
 
-These files will open in Microsoft Excel or Google Sheets.
+These files will open in Microsoft Excel, Google Sheets, or any text editor.
 
 ---
 
@@ -345,7 +355,10 @@ git push
 → Make sure the server is running (`npm run dev`) and no errors show in terminal.
 
 **Vercel deploy failing**
-→ Check that your `.env.local` file has the JWT_SECRET variable set in Vercel dashboard.
+→ Check that all environment variables are set in Vercel dashboard (JWT_SECRET, NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY).
+
+**Database connection errors**
+→ Verify Supabase credentials are correct and have no line breaks or extra spaces.
 
 ---
 
