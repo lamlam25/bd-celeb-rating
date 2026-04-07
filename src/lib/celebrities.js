@@ -42,205 +42,205 @@ export const celebrities = [
     id: 4,
     name: "Mehjabin Chowdhury",
     category: "Actress",
-    images: [
-      "https://i.imgur.com/placeholder4a.jpg",
-      "https://i.imgur.com/placeholder4b.jpg",
-      "https://i.imgur.com/placeholder4c.jpg",
-      "https://i.imgur.com/placeholder4d.jpg",
-      "https://i.imgur.com/placeholder4e.jpg",
-    ]
+  images: [
+  "https://i.imgur.com/mmlwfV6.jpeg",
+  "https://i.imgur.com/Hx8fqJu.jpeg",
+  "https://i.imgur.com/NLpL0me.jpeg",
+  "https://i.imgur.com/BhCad4o.jpeg",
+  "https://i.imgur.com/T2LdNS3.jpeg",
+]
   },
   {
     id: 5,
     name: "James",
     category: "Singer",
     images: [
-      "https://i.imgur.com/placeholder5a.jpg",
-      "https://i.imgur.com/placeholder5b.jpg",
-      "https://i.imgur.com/placeholder5c.jpg",
-      "https://i.imgur.com/placeholder5d.jpg",
-      "https://i.imgur.com/placeholder5e.jpg",
-    ]
+  "https://i.imgur.com/XOokzrT.jpeg",
+  "https://i.imgur.com/cCerA0K.jpeg",
+  "https://i.imgur.com/iOWdAd1.jpeg",
+  "https://i.imgur.com/ESKEpEA.jpeg",
+  "https://i.imgur.com/aLZWnd3.jpeg",
+]
   },
   {
     id: 6,
     name: "Habib Wahid",
     category: "Singer",
     images: [
-      "https://i.imgur.com/placeholder6a.jpg",
-      "https://i.imgur.com/placeholder6b.jpg",
-      "https://i.imgur.com/placeholder6c.jpg",
-      "https://i.imgur.com/placeholder6d.jpg",
-      "https://i.imgur.com/placeholder6e.jpg",
-    ]
+  "https://i.imgur.com/Ix1Tkoz.jpeg",
+  "https://i.imgur.com/gd8YNVQ.jpeg",
+  "https://i.imgur.com/Uu2HfaX.jpeg",
+  "https://i.imgur.com/iDvm2J4.jpeg",
+  "https://i.imgur.com/IWgxcej.jpeg",
+]
   },
   {
     id: 7,
     name: "Nancy",
     category: "Singer",
     images: [
-      "https://i.imgur.com/placeholder7a.jpg",
-      "https://i.imgur.com/placeholder7b.jpg",
-      "https://i.imgur.com/placeholder7c.jpg",
-      "https://i.imgur.com/placeholder7d.jpg",
-      "https://i.imgur.com/placeholder7e.jpg",
-    ]
+  "https://i.imgur.com/w912VNp.jpeg",
+  "https://i.imgur.com/ghTKUjG.jpeg",
+  "https://i.imgur.com/5wI4AQS.jpeg",
+  "https://i.imgur.com/fkBPW56.jpeg",
+  "https://i.imgur.com/UYfLjh7.jpeg",
+]
   },
   {
     id: 8,
     name: "Tahsan",
     category: "Singer/Actor",
     images: [
-      "https://i.imgur.com/placeholder8a.jpg",
-      "https://i.imgur.com/placeholder8b.jpg",
-      "https://i.imgur.com/placeholder8c.jpg",
-      "https://i.imgur.com/placeholder8d.jpg",
-      "https://i.imgur.com/placeholder8e.jpg",
-    ]
+  "https://i.imgur.com/NXvGnhv.jpeg",
+  "https://i.imgur.com/DBlUHdt.jpeg",
+  "https://i.imgur.com/PwtLMUo.jpeg",
+  "https://i.imgur.com/ryVMitx.jpeg",
+  "https://i.imgur.com/sdf8iAM.jpeg",
+]
   },
   {
     id: 9,
     name: "Mithila",
     category: "Actress/Singer",
     images: [
-      "https://i.imgur.com/placeholder9a.jpg",
-      "https://i.imgur.com/placeholder9b.jpg",
-      "https://i.imgur.com/placeholder9c.jpg",
-      "https://i.imgur.com/placeholder9d.jpg",
-      "https://i.imgur.com/placeholder9e.jpg",
-    ]
+  "https://i.imgur.com/f5OWtaD.jpeg",
+  "https://i.imgur.com/TopVVz8.jpeg",
+  "https://i.imgur.com/uIYEi7I.jpeg",
+  "https://i.imgur.com/zam7FEt.jpeg",
+  "https://i.imgur.com/f5OWtaD.jpeg",
+]
   },
   {
     id: 10,
     name: "Chanchal Chowdhury",
     category: "Actor",
-    images: [
-      "https://i.imgur.com/placeholder10a.jpg",
-      "https://i.imgur.com/placeholder10b.jpg",
-      "https://i.imgur.com/placeholder10c.jpg",
-      "https://i.imgur.com/placeholder10d.jpg",
-      "https://i.imgur.com/placeholder10e.jpg",
-    ]
+  images: [
+  "https://i.imgur.com/ZppTWBU.jpeg",
+  "https://i.imgur.com/KlNO0xf.jpeg",
+  "https://i.imgur.com/g88kGOS.jpeg",
+  "https://i.imgur.com/gVB6fCo.jpeg",
+  "https://i.imgur.com/ZppTWBU.jpeg",
+]
   },
   {
     id: 11,
     name: "Bidya Sinha Mim",
     category: "Actress",
     images: [
-      "https://i.imgur.com/placeholder11a.jpg",
-      "https://i.imgur.com/placeholder11b.jpg",
-      "https://i.imgur.com/placeholder11c.jpg",
-      "https://i.imgur.com/placeholder11d.jpg",
-      "https://i.imgur.com/placeholder11e.jpg",
-    ]
+  "https://i.imgur.com/VcaSmbC.jpeg",
+  "https://i.imgur.com/b6TO8px.jpeg",
+  "https://i.imgur.com/yfJjWeG.jpeg",
+  "https://i.imgur.com/X7jxQ5P.jpeg",
+  "https://i.imgur.com/Xj6EWFO.jpeg",
+]
   },
   {
     id: 12,
     name: "Arifin Shuvoo",
     category: "Actor",
     images: [
-      "https://i.imgur.com/placeholder12a.jpg",
-      "https://i.imgur.com/placeholder12b.jpg",
-      "https://i.imgur.com/placeholder12c.jpg",
-      "https://i.imgur.com/placeholder12d.jpg",
-      "https://i.imgur.com/placeholder12e.jpg",
-    ]
+  "https://i.imgur.com/5FGrlN6.jpeg",
+  "https://i.imgur.com/cxRYcmL.jpeg",
+  "https://i.imgur.com/wpsflrz.jpeg",
+  "https://i.imgur.com/IrnpdXQ.jpeg",
+  "https://i.imgur.com/vQtlkVv.jpeg",
+]
   },
   {
     id: 13,
     name: "Pori Moni",
     category: "Actress",
     images: [
-      "https://i.imgur.com/placeholder13a.jpg",
-      "https://i.imgur.com/placeholder13b.jpg",
-      "https://i.imgur.com/placeholder13c.jpg",
-      "https://i.imgur.com/placeholder13d.jpg",
-      "https://i.imgur.com/placeholder13e.jpg",
-    ]
+  "https://i.imgur.com/3tM2R48.jpeg",
+  "https://i.imgur.com/kl1snuR.jpeg",
+  "https://i.imgur.com/JGrQN5H.jpeg",
+  "https://i.imgur.com/Tw1cGq7.jpeg",
+  "https://i.imgur.com/Midu0Sh.jpeg",
+]
   },
   {
     id: 14,
     name: "Niloy Alamgir",
     category: "Actor",
-    images: [
-      "https://i.imgur.com/placeholder14a.jpg",
-      "https://i.imgur.com/placeholder14b.jpg",
-      "https://i.imgur.com/placeholder14c.jpg",
-      "https://i.imgur.com/placeholder14d.jpg",
-      "https://i.imgur.com/placeholder14e.jpg",
-    ]
+  images: [
+  "https://i.imgur.com/952hiHX.jpeg",
+  "https://i.imgur.com/lsF2IYO.jpeg",
+  "https://i.imgur.com/UpX5aqa.jpeg",
+  "https://i.imgur.com/tXb7skh.jpeg",
+  "https://i.imgur.com/952hiHX.jpeg",
+]
   },
   {
     id: 15,
     name: "Tisha",
     category: "Actress",
-    images: [
-      "https://i.imgur.com/placeholder15a.jpg",
-      "https://i.imgur.com/placeholder15b.jpg",
-      "https://i.imgur.com/placeholder15c.jpg",
-      "https://i.imgur.com/placeholder15d.jpg",
-      "https://i.imgur.com/placeholder15e.jpg",
-    ]
+   images: [
+  "https://i.imgur.com/wwpGki9.jpeg",
+  "https://i.imgur.com/GCA4I37.jpeg",
+  "https://i.imgur.com/QZU15Ia.jpeg",
+  "https://i.imgur.com/UlKLXn4.jpeg",
+  "https://i.imgur.com/djX80wl.jpeg",
+]
   },
   {
     id: 16,
     name: "Imran",
     category: "Singer",
     images: [
-      "https://i.imgur.com/placeholder16a.jpg",
-      "https://i.imgur.com/placeholder16b.jpg",
-      "https://i.imgur.com/placeholder16c.jpg",
-      "https://i.imgur.com/placeholder16d.jpg",
-      "https://i.imgur.com/placeholder16e.jpg",
-    ]
+  "https://i.imgur.com/yyAQYY8.jpeg",
+  "https://i.imgur.com/sj308sB.jpeg",
+  "https://i.imgur.com/aisJYaL.jpeg",
+  "https://i.imgur.com/dfhPupD.jpeg",
+  "https://i.imgur.com/533LkUK.jpeg",
+]
   },
   {
     id: 17,
     name: "Aurin",
     category: "Singer",
     images: [
-      "https://i.imgur.com/placeholder17a.jpg",
-      "https://i.imgur.com/placeholder17b.jpg",
-      "https://i.imgur.com/placeholder17c.jpg",
-      "https://i.imgur.com/placeholder17d.jpg",
-      "https://i.imgur.com/placeholder17e.jpg",
-    ]
+  "https://i.imgur.com/o4BSSxV.jpeg",
+  "https://i.imgur.com/iwVsATW.jpeg",
+  "https://i.imgur.com/7fGtZiI.jpeg",
+  "https://i.imgur.com/VH4RyHv.jpeg",
+  "https://i.imgur.com/fJy04tW.jpeg",
+]
   },
   {
     id: 18,
     name: "Zahid Hasan",
     category: "Actor",
     images: [
-      "https://i.imgur.com/placeholder18a.jpg",
-      "https://i.imgur.com/placeholder18b.jpg",
-      "https://i.imgur.com/placeholder18c.jpg",
-      "https://i.imgur.com/placeholder18d.jpg",
-      "https://i.imgur.com/placeholder18e.jpg",
-    ]
+  "https://i.imgur.com/LNaTPDL.jpeg",
+  "https://i.imgur.com/0V2gXNq.jpeg",
+  "https://i.imgur.com/edYiYTW.jpeg",
+  "https://i.imgur.com/fEHGUNk.jpeg",
+  "https://i.imgur.com/VPRLTVY.jpeg",
+]
   },
   {
     id: 19,
     name: "Nusraat Faria",
     category: "Actress/Singer",
     images: [
-      "https://i.imgur.com/placeholder19a.jpg",
-      "https://i.imgur.com/placeholder19b.jpg",
-      "https://i.imgur.com/placeholder19c.jpg",
-      "https://i.imgur.com/placeholder19d.jpg",
-      "https://i.imgur.com/placeholder19e.jpg",
-    ]
+  "https://i.imgur.com/KUpxIqr.jpeg",
+  "https://i.imgur.com/8PizoQz.jpeg",
+  "https://i.imgur.com/0YSxC0v.jpeg",
+  "https://i.imgur.com/3MsyJri.jpeg",
+  "https://i.imgur.com/A4IC7BC.jpeg",
+]
   },
   {
     id: 20,
     name: "Siam Ahmed",
     category: "Actor",
     images: [
-      "https://i.imgur.com/placeholder20a.jpg",
-      "https://i.imgur.com/placeholder20b.jpg",
-      "https://i.imgur.com/placeholder20c.jpg",
-      "https://i.imgur.com/placeholder20d.jpg",
-      "https://i.imgur.com/placeholder20e.jpg",
-    ]
+  "https://i.imgur.com/1h9gygb.jpeg",
+  "https://i.imgur.com/Pb3crZi.jpeg",
+  "https://i.imgur.com/zSUY3Ee.jpeg",
+  "https://i.imgur.com/03PVw0X.jpeg",
+  "https://i.imgur.com/s3VHvnl.jpeg",
+]
   }
 ];
 
